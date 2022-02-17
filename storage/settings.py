@@ -27,7 +27,7 @@ SECRET_KEY = 'django-insecure-y%kmi$5$r6)_47e2fmyf7*)t0c(v03ho5d#pm+q-uexe^n94*x
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
 
-ALLOWED_HOSTS = ['imgstorage.herokuapp.com','localhost']
+ALLOWED_HOSTS = ['img-storage.herokuapp.com','localhost']
 
 
 # Application definition
@@ -150,6 +150,7 @@ CLOUDINARY_STORAGE = {
 MEDIA_URL = '/media/'  # or any prefix you choose
 DEFAULT_FILE_STORAGE = 'cloudinary_storage.storage.MediaCloudinaryStorage'
 
+STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
 
 # BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 # CLOUDINARY_STORAGE = {
