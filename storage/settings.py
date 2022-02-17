@@ -133,6 +133,12 @@ STATIC_ROOT= os.path.join(BASE_DIR, 'static')
 MEDIA_URL = '/media/'  # or any prefix you choose
 MEDIA_ROOT=os.path.join(BASE_DIR, 'media')
 
+STATICFILES_DIRS = (
+    os.path.join(BASE_DIR, 'uploads'),
+)
+STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
+
+
 
 
 
@@ -141,6 +147,8 @@ MEDIA_ROOT=os.path.join(BASE_DIR, 'media')
 # https://docs.djangoproject.com/en/4.0/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+
 
 
 # CLOUDINARY_STORAGE = {
@@ -156,7 +164,6 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 #DEFAULT_FILE_STORAGE = 'cloudinary_storage.storage.MediaCloudinaryStorage'
 
 
-STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
 
 # BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 # CLOUDINARY_STORAGE = {
