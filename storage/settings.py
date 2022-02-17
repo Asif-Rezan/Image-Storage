@@ -122,13 +122,16 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/4.0/howto/static-files/
 
+STATIC_URL = 'static/'
+#STATICFILES_STORAGE = 'cloudinary_storage.storage.StaticHashedCloudinaryStorage'
 
 #STATIC_ROOT='https://res.cloudinary.com/dnwqgkbv7/image/upload/v1/media/images'
 
 STATIC_ROOT= os.path.join(BASE_DIR, 'static')
 
 
-
+MEDIA_URL = '/media/'  # or any prefix you choose
+MEDIA_ROOT=os.path.join(BASE_DIR, 'media')
 
 
 
@@ -140,18 +143,16 @@ STATIC_ROOT= os.path.join(BASE_DIR, 'static')
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 
-CLOUDINARY_STORAGE = {
-    'CLOUD_NAME': 'dnwqgkbv7',
-    'API_KEY': '898534387157396',
-    'API_SECRET': 'doYw1w8TJTZbDEdmJPyTNCUW-A8'
-}
-
-STATIC_URL = 'static/'
-#STATICFILES_STORAGE = 'cloudinary_storage.storage.StaticHashedCloudinaryStorage'
+# CLOUDINARY_STORAGE = {
+#     'CLOUD_NAME': 'dnwqgkbv7',
+#     'API_KEY': '898534387157396',
+#     'API_SECRET': 'doYw1w8TJTZbDEdmJPyTNCUW-A8'
+# }
 
 
-MEDIA_URL = '/media/'  # or any prefix you choose
-MEDIA_ROOT=os.path.join(BASE_DIR, 'media')
+
+
+
 #DEFAULT_FILE_STORAGE = 'cloudinary_storage.storage.MediaCloudinaryStorage'
 
 
