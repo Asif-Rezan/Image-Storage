@@ -124,11 +124,12 @@ USE_TZ = True
 
 # STATIC_ROOT='https://res.cloudinary.com/dnwqgkbv7/image/upload/v1/media/images'
 
-STATIC_ROOT= os.path.join(BASE_DIR, 'staticfiles')
+#STATIC_ROOT= os.path.join(BASE_DIR, 'staticfiles')
 
 
 
 STATIC_URL = 'static/'
+STATICFILES_STORAGE = 'cloudinary_storage.storage.StaticHashedCloudinaryStorage'
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/4.0/ref/settings/#default-auto-field
@@ -136,11 +137,17 @@ STATIC_URL = 'static/'
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 
-# CLOUDINARY_STORAGE = {
-#     'CLOUD_NAME': 'dnwqgkbv7',
-#     'API_KEY': '898534387157396',
-#     'API_SECRET': 'doYw1w8TJTZbDEdmJPyTNCUW-A8'
-# }
+CLOUDINARY_STORAGE = {
+    'CLOUD_NAME': 'dnwqgkbv7',
+    'API_KEY': '898534387157396',
+    'API_SECRET': 'doYw1w8TJTZbDEdmJPyTNCUW-A8'
+}
 
-# MEDIA_URL = '/media/'  # or any prefix you choose
-# DEFAULT_FILE_STORAGE = 'cloudinary_storage.storage.MediaCloudinaryStorage'
+MEDIA_URL = '/media/'  # or any prefix you choose
+DEFAULT_FILE_STORAGE = 'cloudinary_storage.storage.MediaCloudinaryStorage'
+
+BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+CLOUDINARY_STORAGE = {
+    # other settings, like credentials
+    'STATICFILES_MANIFEST_ROOT': os.path.join(BASE_DIR, 'my-manifest-directory')
+}
