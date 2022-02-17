@@ -125,12 +125,11 @@ USE_TZ = True
 
 #STATIC_ROOT='https://res.cloudinary.com/dnwqgkbv7/image/upload/v1/media/images'
 
-STATIC_ROOT= os.path.join(BASE_DIR, 'static')
+#STATIC_ROOT= os.path.join(BASE_DIR, 'static')
 
 
 
-STATIC_URL = 'static/'
-#STATICFILES_STORAGE = 'cloudinary_storage.storage.StaticHashedCloudinaryStorage'
+
 
 
 
@@ -147,10 +146,15 @@ CLOUDINARY_STORAGE = {
     'API_SECRET': 'doYw1w8TJTZbDEdmJPyTNCUW-A8'
 }
 
-MEDIA_URL = '/media/'  # or any prefix you choose
-DEFAULT_FILE_STORAGE = 'cloudinary_storage.storage.MediaCloudinaryStorage'
+STATIC_URL = 'static/'
+#STATICFILES_STORAGE = 'cloudinary_storage.storage.StaticHashedCloudinaryStorage'
 
-STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
+
+MEDIA_URL = '/media/'  # or any prefix you choose
+#DEFAULT_FILE_STORAGE = 'cloudinary_storage.storage.MediaCloudinaryStorage'
+
+
+#STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
 
 # BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 # CLOUDINARY_STORAGE = {
