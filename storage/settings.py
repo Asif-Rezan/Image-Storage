@@ -150,6 +150,7 @@ CLOUDINARY_STORAGE = {
 MEDIA_URL = '/media/'  # or any prefix you choose
 DEFAULT_FILE_STORAGE = 'cloudinary_storage.storage.MediaCloudinaryStorage'
 
+
 # BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 # CLOUDINARY_STORAGE = {
 #     # other settings, like credentials
