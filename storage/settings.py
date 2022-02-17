@@ -25,7 +25,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = 'django-insecure-y%kmi$5$r6)_47e2fmyf7*)t0c(v03ho5d#pm+q-uexe^n94*x'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 
 ALLOWED_HOSTS = ['imgstorage.herokuapp.com','localhost']
 
@@ -88,6 +88,9 @@ DATABASES = {
 }
 
 
+
+
+
 # Password validation
 # https://docs.djangoproject.com/en/4.0/ref/settings/#auth-password-validators
 
@@ -119,6 +122,11 @@ USE_I18N = True
 USE_TZ = True
 
 
+
+
+
+
+
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/4.0/howto/static-files/
 
@@ -127,16 +135,17 @@ STATIC_URL = 'static/'
 
 #STATIC_ROOT='https://res.cloudinary.com/dnwqgkbv7/image/upload/v1/media/images'
 
-STATIC_ROOT= os.path.join(BASE_DIR, 'static')
+#STATIC_ROOT= os.path.join(BASE_DIR, 'static')
 
 
-MEDIA_URL = '/media/'  # or any prefix you choose
-MEDIA_ROOT=os.path.join(BASE_DIR, 'media')
+# MEDIA_URL = '/media/'  # or any prefix you choose
+# MEDIA_ROOT=os.path.join(BASE_DIR, 'media')
 
-STATICFILES_DIRS = (
-    os.path.join(BASE_DIR, 'uploads'),
-)
-STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
+# STATICFILES_DIRS = (
+#     os.path.join(BASE_DIR, 'uploads'),
+# )
+
+#STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
 
 
 
@@ -151,17 +160,19 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 
 
-# CLOUDINARY_STORAGE = {
-#     'CLOUD_NAME': 'dnwqgkbv7',
-#     'API_KEY': '898534387157396',
-#     'API_SECRET': 'doYw1w8TJTZbDEdmJPyTNCUW-A8'
-# }
+CLOUDINARY_STORAGE = {
+    'CLOUD_NAME': 'dnwqgkbv7',
+    'API_KEY': '898534387157396',
+    'API_SECRET': 'doYw1w8TJTZbDEdmJPyTNCUW-A8'
+}
 
 
 
 
 
-#DEFAULT_FILE_STORAGE = 'cloudinary_storage.storage.MediaCloudinaryStorage'
+DEFAULT_FILE_STORAGE = 'cloudinary_storage.storage.MediaCloudinaryStorage'
+
+
 
 
 

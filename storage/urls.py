@@ -27,3 +27,8 @@ urlpatterns = [
     
    
 ]
+
+
+admin.site.site_title = "Image Storage"
+admin.site.site_header = "Image Storage"
+
