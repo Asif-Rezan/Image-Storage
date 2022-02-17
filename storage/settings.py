@@ -42,6 +42,7 @@ INSTALLED_APPS = [
     'images',
     'rest_framework',
     'cloudinary_storage',
+    'cloudinary',
 ]
 
 MIDDLEWARE = [
@@ -129,12 +130,9 @@ STATIC_ROOT= os.path.join(BASE_DIR, 'static')
 
 
 STATIC_URL = 'static/'
-STATICFILES_STORAGE = 'cloudinary_storage.storage.StaticHashedCloudinaryStorage'
+#STATICFILES_STORAGE = 'cloudinary_storage.storage.StaticHashedCloudinaryStorage'
 
-STATICFILES_DIRS = (
-    os.path.join(BASE_DIR, 'uploads'),
-    'cloudinary_storage.storage.StaticHashedCloudinaryStorage'
-)
+
 
 
 # Default primary key field type
