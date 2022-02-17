@@ -125,7 +125,7 @@ USE_TZ = True
 
 #STATIC_ROOT='https://res.cloudinary.com/dnwqgkbv7/image/upload/v1/media/images'
 
-#STATIC_ROOT= os.path.join(BASE_DIR, 'static')
+STATIC_ROOT= os.path.join(BASE_DIR, 'static')
 
 
 
