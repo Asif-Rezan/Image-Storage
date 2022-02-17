@@ -151,10 +151,11 @@ STATIC_URL = 'static/'
 
 
 MEDIA_URL = '/media/'  # or any prefix you choose
+MEDIA_ROOT=os.path.join(BASE_DIR, 'media')
 #DEFAULT_FILE_STORAGE = 'cloudinary_storage.storage.MediaCloudinaryStorage'
 
 
-#STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
+STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
 
 # BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 # CLOUDINARY_STORAGE = {
