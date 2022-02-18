@@ -27,14 +27,43 @@ class ImageApi(ListAPIView):
 
   serializer_class=ImageSerializer
  
-  pagination_class =ImageApiPagination
+ # pagination_class =ImageApiPagination
  
 
 @api_view(['GET'])
 def ImageCategory(request):
+
+  paginator = PageNumberPagination()
+  #paginator.page_size = 10
+
   category=Category.objects.all()
+
+  #result_page = paginator.paginate_queryset(category, request)
 
   serializer=CategorySerializer(category,many=True)
 
+  
   return Response(serializer.data)
 
+
+
+
+
+
+
+#---->> Pagination in function based view---------->>>
+
+# from rest_framework.pagination import PageNumberPagination
+
+# @api_view(['GET',])
+
+# @permission_classes([AllowAny,])
+
+# def PersonView(request):
+
+#     paginator = PageNumberPagination()
+#     paginator.page_size = 10
+#     person_objects = Person.objects.all()
+#     result_page = paginator.paginate_queryset(person_objects, request)
+#     serializer = PersonSerializer(result_page, many=True)
+#     return paginator.get_paginated_response(serializer.data)
