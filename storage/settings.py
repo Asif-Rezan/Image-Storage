@@ -25,7 +25,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = 'django-insecure-y%kmi$5$r6)_47e2fmyf7*)t0c(v03ho5d#pm+q-uexe^n94*x'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
 ALLOWED_HOSTS = ['imgstorage.herokuapp.com','localhost']
 
@@ -122,10 +122,7 @@ USE_I18N = True
 USE_TZ = True
 
 
-REST_FRAMEWORK = {
-    'DEFAULT_PAGINATION_CLASS': 'rest_framework.pagination.PageNumberPagination',
-    'PAGE_SIZE': 1
-}
+
 
 
 
