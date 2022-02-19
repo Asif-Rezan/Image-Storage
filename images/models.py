@@ -2,7 +2,7 @@ from django.db import models
 from PIL import Image
 # Create your models here.
 from django_resized import ResizedImageField
-from cloudinary_storage.storage import RawMediaCloudinaryStorage
+
 
 class Category(models.Model):
   name=models.CharField(max_length=100)
@@ -17,8 +17,12 @@ class Category(models.Model):
 class Images(models.Model):
   title=models.CharField(max_length=200,null=True)
   image=models.ImageField(upload_to='images/', blank=True)
-  image_thumbnail=ResizedImageField(quality=5, upload_to='thumbnail/',blank=True,storage=RawMediaCloudinaryStorage())
-  category=models.ForeignKey(Category,on_delete=models.SET_NULL,null=True,storage=RawMediaCloudinaryStorage())
+  image_thumbnail=ResizedImageField(quality=5, upload_to='thumbnail/',blank=True)
+  category=models.ForeignKey(Category,on_delete=models.SET_NULL,null=True)
+
+
+
+
 
 
   #models.ImageField(upload_to='thumbnail/', blank=True)
