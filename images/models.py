@@ -21,6 +21,10 @@ class Images(models.Model):
   category=models.ForeignKey(Category,on_delete=models.SET_NULL,null=True)
 
 
+
+
+
+
   #models.ImageField(upload_to='thumbnail/', blank=True)
 
   def __str__(self) -> str:
