@@ -131,7 +131,7 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/4.0/howto/static-files/
 
 STATIC_URL = 'static/'
-STATICFILES_STORAGE = 'cloudinary_storage.storage.StaticHashedCloudinaryStorage'
+#STATICFILES_STORAGE = 'cloudinary_storage.storage.StaticHashedCloudinaryStorage'
 
 #STATIC_ROOT='https://res.cloudinary.com/dnwqgkbv7/static'
 
@@ -145,7 +145,7 @@ STATIC_ROOT= os.path.join(BASE_DIR, 'static')
 #     os.path.join(BASE_DIR, 'uploads'),
 # )
 
-#STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
+STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
 
 
 
